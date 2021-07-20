@@ -11,13 +11,13 @@ def getMemoryUsage():
     returnMem['total'] = round(mem['total']/GB, 2)
     returnMem['available'] = round(mem['available']/GB, 2)
     returnMem['percentUsed'] = mem['percent']
-    returnMem['percentAvailable'] = 100 - mem['percent']
+    returnMem['percentAvailable'] = round(100 - mem['percent'], 1)
 
     return returnMem
 
 def getCpuUsage():
-    """Gets CPU usage percentage from the prior 1 second"""
-    cpuPercent = psutil.cpu_percent(1)
+    """Gets CPU usage since previous call"""
+    cpuPercent = psutil.cpu_percent(0.2)
     return cpuPercent
 
 def getUptime():
@@ -50,4 +50,4 @@ def pingHost(host):
     if type(res) == float:
         res = True
     
-    return res
+    return {'host': host, 'isUp': res}
