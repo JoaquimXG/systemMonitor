@@ -8,7 +8,7 @@ setup(
     author_email="info@joaquimgomez.com",
     license="MIT",
     packages=["monitor"],
-    install_requires=["markdown", "numpy"],
+    install_requires=["psutil"],
     zip_safe=False,
     entry_points={
         "console_scripts": ["monitor=monitor.command:main"],

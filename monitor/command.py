@@ -1,4 +1,6 @@
-from . import test
+from . import getMemoryUsage
+from . import GB
 
 def main():
-    print(test()) 
+    mem = getMemoryUsage()
+    print(mem)
