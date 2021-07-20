@@ -6,6 +6,7 @@ from . import pingHost
 from . import GB
 
 from time import sleep
+from datetime import datetime
 import csv
 
 def singleLoop(args):
@@ -27,7 +28,7 @@ def singleLoop(args):
         print("[+] Time Stats:", uptime)
         print(f"[+] Ping {args.host}:", pingResult)
 
-    return {**pingResult, **mem, **cpuPercent, **uptime}
+    return {"Timestamp": datetime.now().strftime("%H:%M:%S-%m/%d/%y"), **pingResult, **mem, **cpuPercent, **uptime}
 
 def primaryLoop(args):
     #Primes CPU value and retrieves Headers for CSV File
