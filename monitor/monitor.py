@@ -1,5 +1,6 @@
 from datetime import datetime
 import psutil
+from ping3 import ping
 from .memsizes import GB
 
 def getMemoryUsage():
@@ -37,3 +38,16 @@ def getUptime():
 
 
     return {"uptime": uptime, "boot": bootTime}
+
+def pingHost(host):
+    """Pings a host
+    Returns: 
+        True if host is up
+        False if host is host is unknown (no ip address found)
+        None if no response from host (host is down)
+    """
+    res = ping(host)
+    if type(res) == float:
+        res = True
+    
+    return res
