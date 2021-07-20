@@ -34,13 +34,17 @@ def primaryLoop(args):
     loopResult = singleLoop(args)
 
     with open(args.outfile, 'w') as f:
-        w = csv.DictWriter(f, loopResult.keys())
-        w.writeheader()
-        while True:
-            loopResult = singleLoop(args)
-            print(loopResult)
-            w.writerow(loopResult)
-            sleep(args.wait)
+        try:
+            w = csv.DictWriter(f, loopResult.keys())
+            w.writeheader()
+            while True:
+                loopResult = singleLoop(args)
+                print(loopResult)
+                w.writerow(loopResult)
+                sleep(args.wait)
+        except(KeyboardInterrupt):
+            f.close()
+            raise
 
 def main():
     args = getArgs()
