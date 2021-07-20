@@ -34,7 +34,7 @@ def primaryLoop(args):
     #Primes CPU value and retrieves Headers for CSV File
     loopResult = singleLoop(args)
 
-    with open(args.outfile, 'w') as f:
+    with open(args.outfile, 'w', newline='') as f:
         try:
             w = csv.DictWriter(f, loopResult.keys())
             w.writeheader()
