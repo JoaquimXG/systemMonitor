@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(
-    name="Windows System Monitor",
+    name="SystemMonitor",
     version="0.1",
     description="Monitors and logs basic system information",
     author="Joaquim Gomez",
