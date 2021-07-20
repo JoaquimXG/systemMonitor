@@ -8,17 +8,17 @@ def getMemoryUsage():
     mem = psutil.virtual_memory()._asdict()
 
     returnMem = {}
-    returnMem['total'] = round(mem['total']/GB, 2)
-    returnMem['available'] = round(mem['available']/GB, 2)
-    returnMem['percentUsed'] = mem['percent']
-    returnMem['percentAvailable'] = round(100 - mem['percent'], 1)
+    returnMem['Total Memory'] = round(mem['total']/GB, 2)
+    returnMem['Available Memory'] = round(mem['available']/GB, 2)
+    returnMem['Percentage Memory Used'] = mem['percent']
+    returnMem['Percentage Memory Available'] = round(100 - mem['percent'], 1)
 
     return returnMem
 
 def getCpuUsage():
     """Gets CPU usage since previous call"""
     cpuPercent = psutil.cpu_percent(0.2)
-    return cpuPercent
+    return {"Percentage CPU Used": cpuPercent}
 
 def getUptime():
     """Gets the time since last reboot"""
@@ -37,7 +37,7 @@ def getUptime():
     bootTime = bootTime.strftime("%H:%M:%S")
 
 
-    return {"uptime": uptime, "boot": bootTime}
+    return {"Uptime": uptime, "Boot Time": bootTime}
 
 def pingHost(host):
     """Pings a host
@@ -50,4 +50,4 @@ def pingHost(host):
     if type(res) == float:
         res = True
     
-    return {'host': host, 'isUp': res}
+    return {'Ping Hostname': host, 'Ping Host is Online': res}

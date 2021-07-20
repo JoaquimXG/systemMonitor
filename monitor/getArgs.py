@@ -21,6 +21,25 @@ def getArgs():
         help="Target host for ping monitor",
     )
 
+    parser.add_argument(
+        "-w",
+        "--wait",
+        action="store",
+        type=int,
+        dest="wait",
+        default="5",
+        help="Time to wait between monitoring loops in (s)",
+    )
+
+    parser.add_argument(
+        "-o",
+        "--outfile",
+        action="store",
+        dest="outfile",
+        default="systemMonitor.csv",
+        help="Output CSV file for loggin",
+    )
+
     # Specify output of "--version"
     parser.add_argument(
         "--version",
