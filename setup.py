@@ -1,9 +1,9 @@
 from setuptools import setup
-from .monitor import version
+from monitor.version import version
 
 setup(
     name="SystemMonitor",
-    version=version.version(),
+    version=version(),
     description="Monitors and logs basic system information",
     author="Joaquim Gomez",
     author_email="info@joaquimgomez.com",
