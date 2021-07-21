@@ -11,6 +11,6 @@ def main():
     x.start()
 
     try:
-        menu()
+        menu(args)
     except(KeyboardInterrupt):
         exit()

@@ -1,3 +1,5 @@
+from . import showCpuInfo
+
 import os
 
 def printMenu(title, options):
@@ -11,21 +13,21 @@ def printMenu(title, options):
     print(f"{exit}. Exit")
     print(76 * "-")
 
-def menu():
+def menu(args):
     prompt = "Enter your choice: "
     while True:
         printMenu("System Monitor", ["Uptime", "Memory Usage", "CPU Usage", "Ping Success Rate"])
         choice = input(prompt)
          
         if choice == '1':     
-            break
+            showCpuInfo(args)
         elif choice == '2':
-            break
+            showCpuInfo(args)
         elif choice == '3':
-            break
+            showCpuInfo(args)
         elif choice == '4':
-            break
+            showCpuInfo(args)
         elif choice == '5':
-            menu()
+            exit()
         else: 
             prompt = "Option not available. Enter another choice: "

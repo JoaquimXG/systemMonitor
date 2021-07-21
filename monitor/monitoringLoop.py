@@ -4,6 +4,7 @@ from . import getUptime
 from . import pingHost
 from . import GB
 from . import AsyncWrite
+from . import datastream
 
 from time import sleep
 from collections import OrderedDict
@@ -55,6 +56,9 @@ def monitoringLoop(args):
 
     while True:
         loopResult = singleLoop(args)
+        datastream.append(loopResult)
+        if len(datastream) > 10:
+            datastream.pop(0)
         background = AsyncWrite.AsyncWrite(loopResult, args['outfile'])
         background.start()
         if args["debug"] > 0:
