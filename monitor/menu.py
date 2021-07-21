@@ -1,4 +1,4 @@
-from . import showInfo, getUptimeInfo, getMemoryInfo, getCpuInfo
+from . import showInfo, getUptimeInfo, getMemoryInfo, getCpuInfo, getPingMonitorInfo
 
 import os
 
@@ -26,7 +26,7 @@ def menu(args):
         elif choice == '3':
             showInfo(args, getCpuInfo)
         elif choice == '4':
-            showInfo(args, getUptimeInfo)
+            showInfo(args, getPingMonitorInfo)
         elif choice == '5':
             exit()
         else: 
