@@ -1,4 +1,5 @@
 import argparse
+from datetime import datetime
 from .version import __version__
 
 def getArgs():
@@ -31,13 +32,15 @@ def getArgs():
         help="Time to wait between monitoring loops in (s)",
     )
 
+
+    dateString = datetime.now().strftime("%d-%m-%y")
     parser.add_argument(
         "-o",
         "--outfile",
         action="store",
         dest="outfile",
-        default="systemMonitor.csv",
-        help="Output CSV file for loggin",
+        default=f"systemMonitor-{dateString}.csv",
+        help="Output CSV file for logging",
     )
 
     # Specify output of "--version"
