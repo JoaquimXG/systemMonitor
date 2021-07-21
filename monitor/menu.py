@@ -1,4 +1,4 @@
-from . import showCpuInfo, showMemoryInfo
+from . import showInfo, getUptimeInfo, getMemoryInfo, getCpuInfo
 
 import os
 
@@ -20,13 +20,13 @@ def menu(args):
         choice = input(prompt)
          
         if choice == '1':     
-            showCpuInfo(args)
+            showInfo(args, getUptimeInfo)
         elif choice == '2':
-            showMemoryInfo(args)
+            showInfo(args, getMemoryInfo)
         elif choice == '3':
-            showCpuInfo(args)
+            showInfo(args, getCpuInfo)
         elif choice == '4':
-            showCpuInfo(args)
+            showInfo(args, getUptimeInfo)
         elif choice == '5':
             exit()
         else: 
