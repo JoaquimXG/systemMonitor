@@ -1,4 +1,4 @@
-from . import showCpuInfo
+from . import showCpuInfo, showMemoryInfo
 
 import os
 
@@ -22,7 +22,7 @@ def menu(args):
         if choice == '1':     
             showCpuInfo(args)
         elif choice == '2':
-            showCpuInfo(args)
+            showMemoryInfo(args)
         elif choice == '3':
             showCpuInfo(args)
         elif choice == '4':
