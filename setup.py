@@ -1,9 +1,12 @@
 from setuptools import setup
-from monitor.version import version
+
+version = {}
+with open("monitor/version.py") as fp:
+        exec(fp.read(), version)
 
 setup(
     name="SystemMonitor",
-    version=version(),
+    version=version['__version__'],
     description="Monitors and logs basic system information",
     author="Joaquim Gomez",
     author_email="info@joaquimgomez.com",

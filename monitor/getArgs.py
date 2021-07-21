@@ -1,5 +1,5 @@
 import argparse
-from .version import version
+from .version import __version__
 
 def getArgs():
     parser = argparse.ArgumentParser()
@@ -44,7 +44,7 @@ def getArgs():
     parser.add_argument(
         "--version",
         action="version",
-        version="%(prog)s (version {version})".format(version=version()),
+        version="%(prog)s (version {version})".format(version=__version__),
     )
     args = parser.parse_args()
 
