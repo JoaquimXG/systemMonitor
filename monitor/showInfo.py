@@ -1,4 +1,4 @@
-from . import datastream
+from . import datastream, alerts
 
 from time import sleep
 import os
@@ -9,7 +9,12 @@ def showInfo(args, func):
         while True:
             os.system("cls" if os.name == "nt" else "clear")
             infoString = func(args, datastream)
-            print(f"{infoString}\n\n\nPress Ctrl-C to return to menu")
+            alertString = ""
+            for key, value in alerts.items():
+                if value:
+                    if key == 'cpuGreaterThan75':
+                        alertString += "############## ALERT ##############\n############ CPU > 75% ############\n\n"
+            print(f"{infoString}\n\n{alertString}Press Ctrl-C to return to menu")
             sleep(args["wait"])
     except (KeyboardInterrupt):
         return
