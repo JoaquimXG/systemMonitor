@@ -12,7 +12,7 @@ setup(
     author_email="info@joaquimgomez.com",
     license="MIT",
     packages=["monitor"],
-    install_requires=["psutil", "ping3"],
+    install_requires=["psutil", "ping3", "requests"],
     zip_safe=False,
     entry_points={
         "console_scripts": ["monitor=monitor.command:main"],
