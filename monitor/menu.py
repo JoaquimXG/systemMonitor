@@ -1,4 +1,4 @@
-from . import showInfo, getUptimeInfo, getMemoryInfo, getCpuInfo, getPingMonitorInfo
+from . import showInfo, getUptimeInfo, getMemoryInfo, getCpuInfo, getPingMonitorInfo, getSiteInfo
 
 import os
 
@@ -16,7 +16,7 @@ def printMenu(title, options):
 def menu(args):
     prompt = "Enter your choice: "
     while True:
-        printMenu("System Monitor", ["Uptime", "Memory Usage", "CPU Usage", "Ping Success Rate"])
+        printMenu("System Monitor", ["Uptime", "Memory Usage", "CPU Usage", "Ping Monitor", "Website Test"])
         choice = input(prompt)
          
         if choice == '1':     
@@ -28,6 +28,8 @@ def menu(args):
         elif choice == '4':
             showInfo(args, getPingMonitorInfo)
         elif choice == '5':
+            showInfo(args, getSiteInfo)
+        elif choice == '6':
             exit()
         else: 
             prompt = "Option not available. Enter another choice: "

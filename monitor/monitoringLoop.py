@@ -2,6 +2,7 @@ from . import getMemoryUsage
 from . import getCpuUsage
 from . import getUptime
 from . import pingHost
+from . import siteMonitor
 from . import GB
 from . import AsyncWrite
 from . import datastream
@@ -23,6 +24,7 @@ def singleLoop(args):
         return [(k, v) for k, v in dict.items()]
 
     pingResult = pingHost(args["host"])
+    siteResult = siteMonitor(args["host"], https=True, www=True)
     mem = getMemoryUsage()
     cpuPercent = getCpuUsage()
     uptime = getUptime()
@@ -32,6 +34,7 @@ def singleLoop(args):
         print("[+] CPU Usage (%):", cpuPercent)
         print("[+] Time Stats:", uptime)
         print(f"[+] Ping {args['host']}:", pingResult)
+        print(f"[+] Test Website {args['host']}:", pingResult)
 
     return OrderedDict(
         [
@@ -40,6 +43,7 @@ def singleLoop(args):
             *dictToTuples(mem),
             *dictToTuples(cpuPercent),
             *dictToTuples(uptime),
+            *dictToTuples(siteResult)
         ]
     )
 
