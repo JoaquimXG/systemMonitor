@@ -16,7 +16,7 @@ def printMenu(title, options):
 def menu(args):
     prompt = "Enter your choice: "
     while True:
-        printMenu("System Monitor", ["Uptime", "Memory Usage", "CPU Usage", "Ping Monitor", "Website Test"])
+        printMenu("System Monitor", ["Uptime", "Memory Usage", "CPU Usage", "Ping Monitor", "Website Monitor"])
         choice = input(prompt)
          
         if choice == '1':     

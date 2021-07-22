@@ -14,6 +14,8 @@ def showInfo(args, func):
                 if value:
                     if key == 'cpuGreaterThan75':
                         alertString += "############## ALERT ##############\n############ CPU > 75% ############\n\n"
+                    if key == 'pingMonitorOffline':
+                        alertString += "############## ALERT ##############\n######## Ping Host is Down ########\n\n"
             print(f"{infoString}\n\n{alertString}Press Ctrl-C to return to menu")
             sleep(args["wait"])
     except (KeyboardInterrupt):
