@@ -7,8 +7,8 @@ import threading
 
 def main():
     args = vars(getArgs())
-    x = threading.Thread(target=monitoringLoop, daemon=True, args=(args,))
-    x.start()
+    monitoringThread = threading.Thread(target=monitoringLoop, daemon=True, args=(args,))
+    monitoringThread.start()
 
     try:
         menu(args)
