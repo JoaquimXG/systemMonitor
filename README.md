@@ -5,6 +5,7 @@
 - Python 3.5
 - psutil
 - ping3
+- requests
 
 ## Usage
 
