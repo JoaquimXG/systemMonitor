@@ -1,5 +1,16 @@
 # SystemMonitor
 
+Created on request for a client to monitor some basic but specific information on a collection of servers. 
+
+## Metrics
+
+- CPU utilisation 
+- Memory utilisation
+- Uptime for a remote host
+- HTTP response for a remote host
+
+Outputs metric to terminal and optionally logs to a file. 
+
 ## Requirements
 
 - Python 3.5
